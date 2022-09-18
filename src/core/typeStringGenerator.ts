@@ -1,11 +1,14 @@
+import { TypeKindMap, TypeKind, SomeType} from 'typedoc'
 
-export function getTypeString (typeDto) {
-  const genetator = typeStringGenetator[typeDto.type]
+export function getTypeString (typeDto: { type: any } ) {
+  const genetator = typeStringGenetators[typeDto.type]
     || (() => 'any')
   return genetator(typeDto)
 }
 
-const typeStringGenetator = {
+const typeStringGenetators: {
+  [k in TypeKind]: (node: TypeKindMap[k]) => string
+} = {
   array: (node) => `Array<${getTypeString(node.elementType)}>`,
   conditional: (node) => {
     const checkTypeString = getTypeString(node.checkType)
@@ -35,7 +38,7 @@ const typeStringGenetator = {
   literal: (node) => `'${node.value}'`,
   mapped: (node) => {
     const splits: string[] = []
-    switch (node.type.readonlyModifier) {
+    switch (node.readonlyModifier) {
       case "+":
           splits.push('readonly')
           break;
@@ -50,7 +53,7 @@ const typeStringGenetator = {
     }
 
     splits.push(']')
-    switch (node.type.optionalModifier) {
+    switch (node.optionalModifier) {
       case "+":
           splits.push('?: ');
           break;
@@ -80,13 +83,11 @@ const typeStringGenetator = {
     if (!!node.targetType) {
       splits.push(` is ${getTypeString(node.targetType)}`)
     }
+    return splits.join('')
   },
   query(node) {
     return `typeof ${getTypeString(node.queryType)}`
   },
-  // array: (node) => {
-    
-  // },
   reference: (node) => {
     // 待完善
     const name = node?.reflection?.name || node.name
@@ -96,9 +97,10 @@ const typeStringGenetator = {
     }, '')
     return `${name}<${argsString}>`
   },
-  // reflection(node) {
-  //   // 待补充
-  // },
+  reflection(node) {
+    // 待补充
+    return 'any'
+  },
   rest(node) {
     return `...${getTypeString(node.elementType)}`
   },
@@ -107,7 +109,7 @@ const typeStringGenetator = {
       return "${" + `${getTypeString(item[0])}` + "}" + `${item[1] || ''}`
     }).join('')
 
-    return '`' + node.type.head + tailsString + '`'
+    return '`' + node.head + tailsString + '`'
   },
   tuple(node) {
     const targetsString = node.elements.reduce((accu, item, i) => {
@@ -117,7 +119,7 @@ const typeStringGenetator = {
     return `[${targetsString}]`
   },
   typeOperator(node) {
-    return `${node.type.operator}${getTypeString(node.target)}`
+    return `${node.operator}${getTypeString(node.target)}`
   },
   union: (node) => {
     return node.types.reduce((accu, typeDto, i) => {
