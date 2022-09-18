@@ -1,10 +1,10 @@
 import { readFile, rm } from 'fs/promises';
-import TypeDoc from 'typedoc'
+import TypeDoc, { ContainerReflection } from 'typedoc'
 
 interface Option {
   entryFile: string
 }
-export async function getTypeTokens (option: Option) {
+export async function getTypeTokens (option: Option): Promise<ContainerReflection | null> {
     const { entryFile } = option
     const app = new TypeDoc.Application();
 

@@ -1,7 +1,9 @@
-type CallbackInTranverse = (node, quit) => void
+import { ContainerReflection } from "typedoc"
+
+type CallbackInTranverse = (node: ContainerReflection, quit: () => void) => void
 
 // 层序遍历
-export const tranverse = (node, cb: CallbackInTranverse) => {
+export const tranverse = (node: ContainerReflection, cb: CallbackInTranverse) => {
   if (!node) return
   let isQuit = false
   const quit = () => isQuit = true
@@ -21,7 +23,7 @@ export const tranverse = (node, cb: CallbackInTranverse) => {
 
 export const findTypeTokenByName = (name: string): CallbackInTranverse => {
   return function (node, quit) {
-    if (node.name === name) {
+    if (node?.name === name) {
       quit()
       return node
     }
