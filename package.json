@@ -2,7 +2,7 @@
   "name": "easy-type",
   "version": "0.0.0",
   "description": "A tool that could gain information of some type from exist declaration file.",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "build:rollup": "rollup -c rollup.config.ts",
