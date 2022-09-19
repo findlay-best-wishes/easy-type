@@ -1,3 +1,4 @@
+import { ContainerReflection } from "typedoc"
 import { getTypeString } from "./typeStringGenerator"
 
 interface TypeOption {
@@ -8,7 +9,7 @@ interface InterfaceOption {
   [index: string]: TypeOption
 }
 
-export const getTypeOption = (typeDto) => {
+export const getTypeOption = (typeDto: ContainerReflection) => {
   const res: InterfaceOption = {}
   if (typeDto.children) {
     for(let child of typeDto.children) {

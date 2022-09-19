@@ -1,8 +1,8 @@
 import { TypeKindMap, TypeKind } from 'typedoc'
 
-export function getTypeString (typeDto: { type: any} ) {
+export function getTypeString (typeDto?: { type: any} ) {
   // @ts-ignorets-ignore
-  const genetator = typeStringGenetators[typeDto.type]
+  const genetator = typeStringGenetators[typeDto?.type]
     || (() => 'any')
   return genetator(typeDto)
 }

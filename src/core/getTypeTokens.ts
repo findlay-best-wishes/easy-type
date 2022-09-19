@@ -2,10 +2,11 @@ import { readFile, rm } from 'fs/promises';
 import TypeDoc, { ContainerReflection } from 'typedoc'
 
 interface Option {
-  entryFile: string
+  entryFile: string,
+  tsconfig: string
 }
 export async function getTypeTokens (option: Option): Promise<ContainerReflection | null> {
-    const { entryFile } = option
+    const { entryFile, tsconfig } = option
     const app = new TypeDoc.Application();
 
     // If you want TypeDoc to load tsconfig.json / typedoc.json files
@@ -15,7 +16,8 @@ export async function getTypeTokens (option: Option): Promise<ContainerReflectio
     app.bootstrap({
         // typedoc options here
         entryPoints: [entryFile],
-        entryPointStrategy: 'resolve'
+        entryPointStrategy: 'resolve',
+        tsconfig,
     });
 
     const project = app.convert();
@@ -23,7 +25,7 @@ export async function getTypeTokens (option: Option): Promise<ContainerReflectio
     if (project) {
         const outputFileName = 'typeToken.json'
         await app.generateJson(project, outputFileName);
-        return readFile(outputFileName)
+        return import(outputFileName)
           .then((result) => {
             rm(outputFileName)
             return JSON.parse(result.toString())
