@@ -1,33 +1,32 @@
-import { ContainerReflection } from "typedoc"
-import { Token } from "../core/getTypeOptions"
+import { ContainerReflection, DeclarationReflection, ProjectReflection } from "typedoc"
 
-type CallbackInTranverse = (node: Token, quit: () => void) => void
+export type TargetNode = ProjectReflection | DeclarationReflection
+type CallbackInTranverse<T extends any = any> = (node: TargetNode, quit: () => void) => T
 
 // 层序遍历
-export const tranverse= (node?: Token, cb?: CallbackInTranverse): ReturnType<CallbackInTranverse> | undefined => {
+export const tranverse = (node?: ProjectReflection, cb?: CallbackInTranverse): ReturnType<CallbackInTranverse> | undefined => {
   if (node && cb) {
     let isQuit = false
     const quit = () => isQuit = true
-    console.log(node)
-    const queue = [node]
+    const queue: Array<ProjectReflection | DeclarationReflection> = [node]
+
     while(queue.length) {
-      const currrentNode = queue.shift() as Token
-      const resCb = cb(currrentNode, quit)
-      if (isQuit) return resCb
+      const currrentNode = queue.shift() as (ProjectReflection | DeclarationReflection)
+      const returnValueCb = cb(currrentNode, quit)
+      if (isQuit) return returnValueCb
       if (currrentNode.children) {
         for(let child of currrentNode.children) {
-          // @ts-ignore
           queue.push(child)
         }
       }
     }
+
   }
-  
 }
 
-export const findTypeTokenByName = (name: string): CallbackInTranverse => {
-  return function (node, quit) {
-    if (node?.name === name) {
+export const findTypeNodeByName = (name: string): CallbackInTranverse<TargetNode | undefined> => {
+  return function (node: TargetNode, quit: () => void) {
+    if (node.name === name) {
       quit()
       return node
     }

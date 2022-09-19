@@ -22,7 +22,8 @@ export interface I {
   c: T1
 }
 
-export type A = Array<string>
+type C = string | number
+export type A = Array<C>
 
 /**
  * asfs

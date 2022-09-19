@@ -1,10 +1,11 @@
-import { TypeKindMap, TypeKind } from 'typedoc'
+import { TypeKindMap, TypeKind, SomeType } from 'typedoc'
 
-export function getTypeString (typeDto?: { type: any} ) {
-  // @ts-ignorets-ignore
-  const genetator = typeStringGenetators[typeDto?.type]
-    || (() => 'any')
-  return genetator(typeDto)
+export function getTypeString (typeDto?: SomeType) {
+  if (!typeDto) return 'any'
+  const genetator = typeStringGenetators[typeDto.type]
+  // @ts-ignore
+  if (genetator) return genetator(typeDto)
+  return 'any'
 }
 
 const typeStringGenetators: {
@@ -64,7 +65,6 @@ const typeStringGenetators: {
       default:
           splits.push(': ');
     }
-
     splits.push(getTypeString(node.templateType))
     
     return `{ ${splits.join('')} }`

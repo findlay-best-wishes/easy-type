@@ -1,4 +1,5 @@
-import { Comment, ContainerReflection, ParameterReflection, SignatureReflection, Type, TypeParameterReflection } from "typedoc"
+import { Comment, ContainerReflection, DeclarationReflection, ParameterReflection, SignatureReflection, Type, TypeParameterReflection } from "typedoc"
+import { TargetNode } from "../utils/tools"
 import { getTypeString } from "./typeStringGenerator"
 
 export interface TypeOption {
@@ -7,14 +8,10 @@ export interface TypeOption {
   comment?: Comment
 }
 
-export type Token = ContainerReflection &
-  ParameterReflection &
-  SignatureReflection & 
-  TypeParameterReflection
-export const getTypeOption = (typeDto: Token): Array<TypeOption> | TypeOption | null => {
-  if (typeDto.children) {
+export const getTypeOptionFromNode = (node: TargetNode): Array<TypeOption> | TypeOption | null => {
+  if (node.children) {
     let res: Array<TypeOption> = []
-    for(let child of typeDto.children) {
+    for(let child of node.children) {
       const childInfo = {
         name: child.name,
         type: getTypeString(child.type),
@@ -24,13 +21,12 @@ export const getTypeOption = (typeDto: Token): Array<TypeOption> | TypeOption | 
     }
     return res
   }
-  if (typeDto.type) {
+  if (node instanceof DeclarationReflection) {
     const res: TypeOption = {
-      name: typeDto.name,
-      type: getTypeString(typeDto.type),
-      comment: typeDto.comment
+      name: node.name,
+      type: getTypeString(node.type),
+      comment: node.comment
     }
-    res.type = getTypeString(typeDto.type)
     return res
   }
   return null

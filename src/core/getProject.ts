@@ -1,13 +1,13 @@
 import { readFile, rm } from 'fs/promises';
 import { resolve } from 'path';
-import { Application, TSConfigReader, TypeDocReader, ContainerReflection } from 'typedoc'
-import { Token } from './getTypeOptions';
+import { Application, TSConfigReader, TypeDocReader, ContainerReflection, ProjectReflection } from 'typedoc'
 
 interface Option {
   entryFile: string,
   tsconfig: string
 }
-export async function getTypeTokens (option: Option): Promise<Token | null> {
+
+export function getTypeProject (option: Option) {
     const { entryFile, tsconfig } = option
     const app = new Application();
 
@@ -23,12 +23,8 @@ export async function getTypeTokens (option: Option): Promise<Token | null> {
     });
 
     const project = app.convert();
-
-    if (project) {
-        const ser = app.serializer.projectToObject(project);
-        console.log('ser json', JSON.stringify(ser, null, '\t'))
-        // @ts-ignore
-        return ser
+    return {
+      app,
+      project,
     }
-    return null
 }
