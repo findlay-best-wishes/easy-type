@@ -1,4 +1,5 @@
 import { readFile, rm } from 'fs/promises';
+import { resolve } from 'path';
 import { Application, TSConfigReader, TypeDocReader, ContainerReflection } from 'typedoc'
 
 interface Option {
@@ -25,11 +26,15 @@ export async function getTypeTokens (option: Option): Promise<ContainerReflectio
     if (project) {
         const outputFileName = 'typeToken.json'
         await app.generateJson(project, outputFileName);
-        return import(outputFileName)
-          .then((result) => {
-            rm(outputFileName)
-            return JSON.parse(result.toString())
-          })
+        const outputFilePath = resolve(process.cwd(), outputFileName)
+        const tokensBuffer = await readFile(outputFilePath)
+        rm(outputFilePath)
+        return JSON.parse(tokensBuffer.toString())
+        // return import(outputFileName)
+        //   .then((result) => {
+        //     rm(outputFileName)
+        //     return JSON.parse(result.toString())
+        //   })
     }
     return null
 }
