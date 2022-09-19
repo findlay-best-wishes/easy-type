@@ -1,10 +1,10 @@
-import { type } from "os"
-import { ContainerReflection, ParameterReflection, SignatureReflection, Type, TypeParameterReflection } from "typedoc"
+import { Comment, ContainerReflection, ParameterReflection, SignatureReflection, Type, TypeParameterReflection } from "typedoc"
 import { getTypeString } from "./typeStringGenerator"
 
 export interface TypeOption {
   name: string,
   type: string,
+  comment?: Comment
 }
 
 export type Token = ContainerReflection &
@@ -17,7 +17,8 @@ export const getTypeOption = (typeDto: Token): Array<TypeOption> | TypeOption | 
     for(let child of typeDto.children) {
       const childInfo = {
         name: child.name,
-        type: getTypeString(child.type)
+        type: getTypeString(child.type),
+        comment: child.comment
       }
       res.push(childInfo)
     }
@@ -26,7 +27,8 @@ export const getTypeOption = (typeDto: Token): Array<TypeOption> | TypeOption | 
   if (typeDto.type) {
     const res: TypeOption = {
       name: typeDto.name,
-      type: getTypeString(typeDto.type)
+      type: getTypeString(typeDto.type),
+      comment: typeDto.comment
     }
     res.type = getTypeString(typeDto.type)
     return res
