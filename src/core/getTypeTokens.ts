@@ -25,12 +25,10 @@ export async function getTypeTokens (option: Option): Promise<Token | null> {
     const project = app.convert();
 
     if (project) {
-        const outputFileName = 'typeToken.json'
-        await app.generateJson(project, outputFileName);
-        const outputFilePath = resolve(process.cwd(), outputFileName)
-        const tokensBuffer = await readFile(outputFilePath)
-        // rm(outputFilePath)
-        return JSON.parse(tokensBuffer.toString())
+        const ser = app.serializer.projectToObject(project);
+        console.log('ser json', JSON.stringify(ser, null, '\t'))
+        // @ts-ignore
+        return ser
     }
     return null
 }
