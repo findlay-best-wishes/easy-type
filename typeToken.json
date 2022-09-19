@@ -7,7 +7,7 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 5,
+			"id": 8,
 			"name": "I",
 			"kind": 256,
 			"kindString": "Interface",
@@ -28,7 +28,7 @@
 			},
 			"children": [
 				{
-					"id": 6,
+					"id": 9,
 					"name": "a",
 					"kind": 1024,
 					"kindString": "Property",
@@ -63,7 +63,7 @@
 							"fileName": "test.ts",
 							"line": 20,
 							"character": 11,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/ba8bedc/test/test.ts#L20"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L20"
 						}
 					],
 					"type": {
@@ -72,7 +72,7 @@
 					}
 				},
 				{
-					"id": 7,
+					"id": 10,
 					"name": "b",
 					"kind": 1024,
 					"kindString": "Property",
@@ -82,7 +82,7 @@
 							"fileName": "test.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/ba8bedc/test/test.ts#L21"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L21"
 						}
 					],
 					"type": {
@@ -91,7 +91,7 @@
 					}
 				},
 				{
-					"id": 8,
+					"id": 11,
 					"name": "c",
 					"kind": 1024,
 					"kindString": "Property",
@@ -101,11 +101,12 @@
 							"fileName": "test.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/ba8bedc/test/test.ts#L22"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L22"
 						}
 					],
 					"type": {
 						"type": "reference",
+						"id": 5,
 						"name": "T1"
 					}
 				}
@@ -114,9 +115,9 @@
 				{
 					"title": "Properties",
 					"children": [
-						6,
-						7,
-						8
+						9,
+						10,
+						11
 					]
 				}
 			],
@@ -125,9 +126,128 @@
 					"fileName": "test.ts",
 					"line": 15,
 					"character": 17,
-					"url": "https://github.com/findlay-best-wishes/easy-type/blob/ba8bedc/test/test.ts#L15"
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L15"
 				}
 			]
+		},
+		{
+			"id": 5,
+			"name": "T1",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 6,
+					"name": "a",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@defaultValue",
+								"content": [
+									{
+										"kind": "text",
+										"text": "1"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "test.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 7,
+					"name": "c",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "test.ts",
+							"line": 9,
+							"character": 2,
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L9"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						6,
+						7
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "test.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L4"
+				}
+			]
+		},
+		{
+			"id": 12,
+			"name": "A",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "test.ts",
+					"line": 25,
+					"character": 12,
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L25"
+				}
+			],
+			"type": {
+				"type": "array",
+				"elementType": {
+					"type": "intrinsic",
+					"name": "string"
+				}
+			}
+		},
+		{
+			"id": 13,
+			"name": "B",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "test.ts",
+					"line": 27,
+					"character": 12,
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L27"
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "string"
+			}
 		},
 		{
 			"id": 1,
@@ -140,7 +260,7 @@
 					"fileName": "test.ts",
 					"line": 2,
 					"character": 12,
-					"url": "https://github.com/findlay-best-wishes/easy-type/blob/ba8bedc/test/test.ts#L2"
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L2"
 				}
 			],
 			"type": {
@@ -156,7 +276,7 @@
 							"fileName": "test.ts",
 							"line": 2,
 							"character": 20,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/ba8bedc/test/test.ts#L2"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L2"
 						}
 					],
 					"signatures": [
@@ -193,12 +313,15 @@
 		{
 			"title": "Interfaces",
 			"children": [
+				8,
 				5
 			]
 		},
 		{
 			"title": "Type Aliases",
 			"children": [
+				12,
+				13,
 				1
 			]
 		}
@@ -208,7 +331,7 @@
 			"fileName": "test.ts",
 			"line": 2,
 			"character": 0,
-			"url": "https://github.com/findlay-best-wishes/easy-type/blob/ba8bedc/test/test.ts#L2"
+			"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L2"
 		}
 	]
 }

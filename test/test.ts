@@ -1,7 +1,7 @@
 
 export type Func1 = (a: string) => void
 
-interface T1 {
+export interface T1 {
   /**
    * @defaultValue 1
    */
@@ -22,4 +22,6 @@ export interface I {
   c: T1
 }
 
-type A = Array<string>
+export type A = Array<string>
+
+export type B = string
