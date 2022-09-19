@@ -1,5 +1,5 @@
 import { readFile, rm } from 'fs/promises';
-import TypeDoc, { ContainerReflection } from 'typedoc'
+import { Application, TSConfigReader, TypeDocReader, ContainerReflection } from 'typedoc'
 
 interface Option {
   entryFile: string,
@@ -7,11 +7,11 @@ interface Option {
 }
 export async function getTypeTokens (option: Option): Promise<ContainerReflection | null> {
     const { entryFile, tsconfig } = option
-    const app = new TypeDoc.Application();
+    const app = new Application();
 
     // If you want TypeDoc to load tsconfig.json / typedoc.json files
-    app.options.addReader(new TypeDoc.TSConfigReader());
-    app.options.addReader(new TypeDoc.TypeDocReader());
+    app.options.addReader(new TSConfigReader());
+    app.options.addReader(new TypeDocReader());
 
     app.bootstrap({
         // typedoc options here

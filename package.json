@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "description": "A tool that could gain information of some type from exist declaration file.",
   "main": "dist/index.js",
-  "type": "module",
   "scripts": {
     "build": "rollup -c rollup.config.ts",
     "start": "NODE_OPTION='--experimental-vm-module' ts-node-esm main1.ts"
