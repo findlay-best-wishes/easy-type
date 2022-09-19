@@ -3,6 +3,7 @@ import { ContainerReflection, ParameterReflection, SignatureReflection, Type, Ty
 import { getTypeString } from "./typeStringGenerator"
 
 export interface TypeOption {
+  name: string,
   type: string,
 }
 
@@ -15,6 +16,7 @@ export const getTypeOption = (typeDto: Token): Array<TypeOption> | TypeOption | 
     let res: Array<TypeOption> = []
     for(let child of typeDto.children) {
       const childInfo = {
+        name: child.name,
         type: getTypeString(child.type)
       }
       res.push(childInfo)
@@ -23,6 +25,7 @@ export const getTypeOption = (typeDto: Token): Array<TypeOption> | TypeOption | 
   }
   if (typeDto.type) {
     const res: TypeOption = {
+      name: typeDto.name,
       type: getTypeString(typeDto.type)
     }
     res.type = getTypeString(typeDto.type)
