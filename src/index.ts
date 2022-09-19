@@ -9,7 +9,7 @@ interface Option {
   tsconfig: string
 }
 
-export async function getTypeOption(option: Option): Promise<Array<TypeOption> | TypeOption | null> {
+export function getTypeOption(option: Option): Array<TypeOption> | TypeOption | null {
   const { entryFile, typeName, tsconfig } = option
   const { project } = getTypeProject({ entryFile, tsconfig })
   if (project) {
