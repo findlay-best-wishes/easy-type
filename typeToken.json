@@ -63,7 +63,7 @@
 							"fileName": "test.ts",
 							"line": 20,
 							"character": 11,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L20"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L20"
 						}
 					],
 					"type": {
@@ -82,7 +82,7 @@
 							"fileName": "test.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L21"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L21"
 						}
 					],
 					"type": {
@@ -101,7 +101,7 @@
 							"fileName": "test.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L22"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L22"
 						}
 					],
 					"type": {
@@ -126,7 +126,7 @@
 					"fileName": "test.ts",
 					"line": 15,
 					"character": 17,
-					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L15"
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L15"
 				}
 			]
 		},
@@ -162,7 +162,7 @@
 							"fileName": "test.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L8"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L8"
 						}
 					],
 					"type": {
@@ -181,7 +181,7 @@
 							"fileName": "test.ts",
 							"line": 9,
 							"character": 2,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L9"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L9"
 						}
 					],
 					"type": {
@@ -204,7 +204,7 @@
 					"fileName": "test.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L4"
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L4"
 				}
 			]
 		},
@@ -219,7 +219,7 @@
 					"fileName": "test.ts",
 					"line": 25,
 					"character": 12,
-					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L25"
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L25"
 				}
 			],
 			"type": {
@@ -236,12 +236,35 @@
 			"kind": 4194304,
 			"kindString": "Type alias",
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "asfs"
+					}
+				],
+				"blockTags": [
+					{
+						"tag": "@description",
+						"content": []
+					},
+					{
+						"tag": "@defaultValue",
+						"content": [
+							{
+								"kind": "text",
+								"text": "1"
+							}
+						]
+					}
+				]
+			},
 			"sources": [
 				{
 					"fileName": "test.ts",
-					"line": 27,
+					"line": 32,
 					"character": 12,
-					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L27"
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L32"
 				}
 			],
 			"type": {
@@ -260,7 +283,7 @@
 					"fileName": "test.ts",
 					"line": 2,
 					"character": 12,
-					"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L2"
+					"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L2"
 				}
 			],
 			"type": {
@@ -276,7 +299,7 @@
 							"fileName": "test.ts",
 							"line": 2,
 							"character": 20,
-							"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L2"
+							"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L2"
 						}
 					],
 					"signatures": [
@@ -331,7 +354,7 @@
 			"fileName": "test.ts",
 			"line": 2,
 			"character": 0,
-			"url": "https://github.com/findlay-best-wishes/easy-type/blob/b9dd20d/test/test.ts#L2"
+			"url": "https://github.com/findlay-best-wishes/easy-type/blob/987e1df/test/test.ts#L2"
 		}
 	]
 }

@@ -24,4 +24,9 @@ export interface I {
 
 export type A = Array<string>
 
+/**
+ * asfs
+ * @description
+ * @defaultValue 1
+ */
 export type B = string
