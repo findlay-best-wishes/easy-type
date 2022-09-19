@@ -1,5 +1,5 @@
 import { ContainerReflection } from "typedoc"
-import { getTypeOption as getTypeOptionScoped } from "./core/getTypeOptions"
+import { getTypeOption as getTypeOptionScoped, TypeOption } from "./core/getTypeOptions"
 import { getTypeTokens } from "./core/getTypeTokens"
 import { findTypeTokenByName, tranverse } from "./utils/tools"
 
@@ -9,7 +9,7 @@ interface Option {
   tsconfig: string
 }
 
-export async function getTypeOption(option: Option): Promise<ContainerReflection | {}> {
+export async function getTypeOption(option: Option): Promise<Array<TypeOption> | TypeOption | null> {
   const { entryFile, typeName, tsconfig } = option
   const typeTokens = await getTypeTokens({ entryFile, tsconfig })
   if (typeTokens) {
@@ -19,5 +19,5 @@ export async function getTypeOption(option: Option): Promise<ContainerReflection
     } 
   }
 
-  return {}
+  return null
 }
