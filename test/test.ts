@@ -22,7 +22,8 @@ export interface I {
   c: T1
 }
 
-type C = string | number
+type Q = Array<string>
+export type C = string | number | Array<string>
 export type A = Array<C>
 
 /**
