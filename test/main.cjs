@@ -1,5 +1,6 @@
-const { getTypeOption } = require('../dist/index.cjs')
+const { getTypeOption } = require('../dist/src/index')
 
+console.log('getTypeOption', getTypeOption)
 getTypeOption({
   entryFile: 'test/test.ts',
   typeName: 'I',
