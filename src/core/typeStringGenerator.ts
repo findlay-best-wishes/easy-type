@@ -100,7 +100,11 @@ const typeStringGenetators: {
   },
   reflection(node) {
     // 待补充
-    return 'any'
+    if (!node.declaration.children && node.declaration.signatures) {
+      return "Function";
+    } else {
+      return "Object";
+    }
   },
   rest(node) {
     return `...${getTypeString(node.elementType)}`
