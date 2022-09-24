@@ -8,7 +8,7 @@ export function getTypeString (typeDto?: SomeType) {
   return 'any'
 }
 
-const typeStringGenetators: {
+export const typeStringGenetators: {
   [k in TypeKind]: (node: TypeKindMap[k]) => string
 } = {
   array: (node) => `Array<${getTypeString(node.elementType)}>`,

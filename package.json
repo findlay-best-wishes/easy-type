@@ -1,12 +1,13 @@
 {
   "name": "easy-type",
   "version": "0.0.0",
-  "description": "A tool that could gain information of some type from exist declaration file.",
-  "main": "dist/src/index.js",
+  "description": "gain information of some type from typescript project",
+  "main": "dist/index.js",
+  "types": "dist",
   "scripts": {
     "build": "rm -rf dist && tsc --declaration",
     "test": "jest",
-    "build:rollup": "rollup -c rollup.config.ts",
+    "build:rollup": "rollup -c rollup.config.ts"
   },
   "author": "findlay-best-wishes",
   "repository": "https://github.com/findlay-best-wishes/easy-type",

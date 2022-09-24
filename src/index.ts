@@ -3,12 +3,12 @@ import { getTypeProject } from "./core/getProject"
 import { tranverse } from "./utils/tools"
 import { TargetNode } from './utils/tools'
 
-interface Option {
+export interface IOption {
   entryFile: string
   typeName: string | string[]
   tsconfig: string
 }
-type GetTypeOption = (option: Option) => Record<string, Array<TypeOption> | TypeOption | null> | null
+export type GetTypeOption = (option: IOption) => Record<string, Array<TypeOption> | TypeOption | null> | null
 export const getTypeOption: GetTypeOption = (option) => {
   const { entryFile, typeName, tsconfig } = option
   const typeNames = Array.isArray(typeName) ? typeName : [typeName]

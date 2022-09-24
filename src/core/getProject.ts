@@ -1,11 +1,11 @@
-import { Application, TSConfigReader, TypeDocReader, ContainerReflection, ProjectReflection } from 'typedoc'
+import { Application, TSConfigReader, TypeDocReader } from 'typedoc'
 
-interface Option {
+export interface ProjectOption {
   entryFile: string,
   tsconfig: string
 }
 
-export function getTypeProject (option: Option) {
+export function getTypeProject (option: ProjectOption) {
     const { entryFile, tsconfig } = option
     const app = new Application();
 
