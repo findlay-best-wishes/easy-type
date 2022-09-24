@@ -42,10 +42,10 @@ const typeStringGenetators: {
     const splits: string[] = []
     switch (node.readonlyModifier) {
       case "+":
-          splits.push('readonly')
+          splits.push('readonly ')
           break;
       case "-":
-          splits.push('-readonly');
+          splits.push('-readonly ');
           break;
     }
 
@@ -124,7 +124,7 @@ const typeStringGenetators: {
     return `[${targetsString}]`
   },
   typeOperator(node) {
-    return `${node.operator}${getTypeString(node.target)}`
+    return `${node.operator} ${getTypeString(node.target)}`
   },
   union: (node) => {
     return node.types.reduce((accu, typeDto, i) => {
