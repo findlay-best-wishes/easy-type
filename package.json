@@ -1,6 +1,6 @@
 {
   "name": "easy-type",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "gain information of some type from typescript project",
   "main": "dist/index.js",
   "types": "dist",
@@ -8,10 +8,27 @@
     "build": "rm -rf dist && tsc --declaration",
     "test": "jest",
     "fmt": "prettier --write . && eslint --fix .",
-    "build:rollup": "rollup -c rollup.config.ts"
+    "build:rollup": "rollup -c rollup.config.ts",
+    "release": "semantic-release"
   },
   "lint-staged": {
     "*": "fmt"
+  },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "main",
+      "next",
+      "next-major",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ]
   },
   "author": "findlay-best-wishes",
   "repository": "https://github.com/findlay-best-wishes/easy-type",
@@ -34,7 +51,8 @@
     "prettier": "^2.7.1",
     "rollup": "^2.79.0",
     "rollup-plugin-clear": "^2.0.7",
-    "ts-jest": "^29.0.1"
+    "ts-jest": "^29.0.1",
+    "semantic-release": "^19.0.5"
   },
   "dependencies": {
     "rollup-plugin-node-globals": "^1.4.0",
@@ -42,5 +60,8 @@
     "tslib": "^2.4.0",
     "typedoc": "^0.23.14",
     "typescript": "^4.8.3"
+  },
+  "volta": {
+    "node": "16.17.1"
   }
 }
