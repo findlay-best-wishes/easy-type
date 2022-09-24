@@ -1,8 +1,8 @@
-[EN](./Readme.md) | [简体中文](./docs/Readme.zh.md)
+[简体中文](./Readme.zh.md) | [EN](../Readme.md)
 
-Gain information ( such as type or comment ) of some type from typescript project.
+获取 typescript 工程中某个类型的信息，比如类型的字符表示及对应的jsdoc comment。
 
-# Usage
+# 用法
 
 ``` shell
 npm install easy-type
@@ -17,9 +17,9 @@ const { name, type, comment } = getTypeOption({
   tsconfig: 'tsconfig'
 })
 ```
-
+a
 ``` javascript
-// gain mutiple type information
+// 获取多个类型信息
 const { getTypeOption } = require('easy-type')
 
 const { Props, State } = getTypeOption({
