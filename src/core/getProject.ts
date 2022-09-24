@@ -1,5 +1,3 @@
-import { readFile, rm } from 'fs/promises';
-import { resolve } from 'path';
 import { Application, TSConfigReader, TypeDocReader, ContainerReflection, ProjectReflection } from 'typedoc'
 
 interface Option {

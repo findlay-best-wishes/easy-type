@@ -1,4 +1,4 @@
-import { ContainerReflection, DeclarationReflection, ProjectReflection } from "typedoc"
+import { DeclarationReflection, ProjectReflection } from "typedoc"
 
 export type TargetNode = ProjectReflection | DeclarationReflection
 type CallbackInTranverse<T extends any = any> = (node: TargetNode, quit: () => void) => T
@@ -32,21 +32,3 @@ export const findTypeNodeByName = (name: string): CallbackInTranverse<TargetNode
     }
   }
 }
-
-// export const findTypeNodesByNames = (names: string[]): CallbackInTranverse<Array<TargetNode | null> | undefined> => {
-//   const numsFound = 0
-//   const reg: Array<TargetNode | null> = new Array(names.length).fill(null)
-//   const name2Idx = names.reduce((accu, name: string, i) => {
-//     accu[name] = i
-//     return accu
-//   }, {} as Record<string, number>)
-
-//   return function (node: TargetNode, quit: () => void) {
-//     if (name2Idx[node.name] > 0) {
-
-//     }
-//     if (numsFound === names.length) {
-//       return reg
-//     }
-//   }
-// }

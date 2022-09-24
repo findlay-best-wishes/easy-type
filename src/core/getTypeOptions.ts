@@ -1,4 +1,4 @@
-import { Comment, ContainerReflection, DeclarationReflection, ParameterReflection, SignatureReflection, Type, TypeParameterReflection } from "typedoc"
+import { Comment, DeclarationReflection } from "typedoc"
 import { TargetNode } from "../utils/tools"
 import { getTypeString } from "./typeStringGenerator"
 

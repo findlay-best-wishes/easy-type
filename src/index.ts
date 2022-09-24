@@ -1,7 +1,6 @@
-import { ContainerReflection } from "typedoc"
 import { getTypeOptionFromNode, TypeOption } from "./core/getTypeOptions"
 import { getTypeProject } from "./core/getProject"
-import { findTypeNodeByName, tranverse } from "./utils/tools"
+import { tranverse } from "./utils/tools"
 import { TargetNode } from './utils/tools'
 
 interface Option {
@@ -15,11 +14,6 @@ export const getTypeOption: GetTypeOption = (option) => {
   const typeNames = Array.isArray(typeName) ? typeName : [typeName]
   const { project } = getTypeProject({ entryFile, tsconfig })
   if (project) {
-    // const targetNode = tranverse(project, findTypeNodeByName(typeName))
-    // if (targetNode) {
-    //   return getTypeOptionFromNode(targetNode)
-    // }
-
     const name2Idx = typeNames.reduce((accu, name: string, i) => {
       accu[name] = i
       return accu
