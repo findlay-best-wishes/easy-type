@@ -1,0 +1,10 @@
+__tests__
+.husky
+dist
+node_modules
+.eslintrc.js
+.eslintignore
+.gitignore
+.prettierignore
+.prettierrc
+pnpm-lock.yaml

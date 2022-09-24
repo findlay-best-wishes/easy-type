@@ -9,7 +9,9 @@ export type Conditional<T> = T extends Array<any> ? Array<any> : 'non-array'
 
 export type IndexedAccess = I1['name']
 
-export type Inferred<T extends Array<string>> = T extends Array<infer I> ? I : any
+export type Inferred<T extends Array<string>> = T extends Array<infer I>
+  ? I
+  : any
 
 export type Intersection = 'a' | number | ArrayNum
 

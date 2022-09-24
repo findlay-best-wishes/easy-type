@@ -1,0 +1,9 @@
+dist
+node_modules
+.eslintrc.js
+.prettierignore
+.prettierrc.json
+package.json
+pnpm-lock.yaml
+tsconfig.json
+tsconfig.test.json

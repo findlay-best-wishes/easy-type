@@ -4,11 +4,11 @@ Gain information ( such as type or comment ) of some type from typescript projec
 
 # Usage
 
-``` shell
+```shell
 npm install easy-type
 ```
 
-``` javascript
+```javascript
 const { getTypeOption } = require('easy-type')
 
 const { name, type, comment } = getTypeOption({
@@ -18,7 +18,7 @@ const { name, type, comment } = getTypeOption({
 })
 ```
 
-``` javascript
+```javascript
 // gain mutiple type information
 const { getTypeOption } = require('easy-type')
 

@@ -1,4 +1,3 @@
-
 describe('getTypeOption', () => {
   const { getTypeOption } = require('../dist')
   const typeNames = [
@@ -21,7 +20,7 @@ describe('getTypeOption', () => {
     'Tuple',
     'Union',
     'Unknown',
-    'I1'
+    'I1',
   ]
   const {
     str,
@@ -43,11 +42,11 @@ describe('getTypeOption', () => {
     Tuple,
     Union,
     Unknown,
-    I1
+    I1,
   } = getTypeOption({
     entryFile: '__tests__/data//test.ts',
-    typeName: typeNames, 
-    tsconfig: 'tsconfig.test.json'
+    typeName: typeNames,
+    tsconfig: 'tsconfig.test.json',
   })
 
   test('should get type option', () => {
@@ -55,16 +54,21 @@ describe('getTypeOption', () => {
 
     const defaultTagInfo = str.comment.getTag('@defaultValue')
     expect(defaultTagInfo.tag).toEqual('@defaultValue')
-    
-    expect(defaultTagInfo.content[0]).toEqual({kind: 'text', text: 'defaultValue'})
+
+    expect(defaultTagInfo.content[0]).toEqual({
+      kind: 'text',
+      text: 'defaultValue',
+    })
 
     expect(ArrayNum.type).toBe('Array<number>')
 
-    expect(Conditional.type).toBe("T extends Array<any> ? Array<any> : 'non-array'")
+    expect(Conditional.type).toBe(
+      "T extends Array<any> ? Array<any> : 'non-array'"
+    )
 
     expect(IndexedAccess.type).toBe("I1['name']")
 
-    expect(Inferred.type).toBe("T extends Array<infer I> ? I : any")
+    expect(Inferred.type).toBe('T extends Array<infer I> ? I : any')
 
     expect(Intersection.type).toBe("'a' | number | ArrayNum")
 
@@ -72,34 +76,34 @@ describe('getTypeOption', () => {
 
     expect(LiteralNum.type).toBe("'1'")
 
-    expect(Mapped.type).toBe("{ [k in keyof T as string]: T[k] }")
+    expect(Mapped.type).toBe('{ [k in keyof T as string]: T[k] }')
 
-    expect(MappedReadonly.type).toBe("{ readonly [k in keyof T]: T[k] }")
+    expect(MappedReadonly.type).toBe('{ readonly [k in keyof T]: T[k] }')
 
-    expect(MappedOmitReadonly.type).toBe("{ -readonly [k in keyof T]: T[k] }")
-  
-    expect(MappedOptional.type).toBe("{ [k in keyof T]?: T[k] }")
+    expect(MappedOmitReadonly.type).toBe('{ -readonly [k in keyof T]: T[k] }')
 
-    expect(MappedRequired.type).toBe("{ [k in keyof T]-?: T[k] }")
+    expect(MappedOptional.type).toBe('{ [k in keyof T]?: T[k] }')
 
-    expect(QueryA.type).toBe("typeof a")
+    expect(MappedRequired.type).toBe('{ [k in keyof T]-?: T[k] }')
+
+    expect(QueryA.type).toBe('typeof a')
 
     // expect(Rested.type).toBe("{ a: [...A] }")
 
-    expect(TemplateLiteral.type).toBe("`the type is ${QueryA}`")
+    expect(TemplateLiteral.type).toBe('`the type is ${QueryA}`')
 
-    expect(Tuple.type).toBe("[string, number, I1]")
+    expect(Tuple.type).toBe('[string, number, I1]')
 
-    expect(Union.type).toBe("string | number | I1")
+    expect(Union.type).toBe('string | number | I1')
 
-    expect(Unknown.type).toBe("unknown")
-    
+    expect(Unknown.type).toBe('unknown')
+
     expect(I1).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
           name: 'name',
           type: 'string',
-          comment: undefined
+          comment: undefined,
         }),
         expect.objectContaining({
           name: 'type',
@@ -109,13 +113,13 @@ describe('getTypeOption', () => {
         expect.objectContaining({
           name: 'age',
           type: "'1'",
-          comment: undefined
+          comment: undefined,
         }),
         expect.objectContaining({
           name: 'money',
           type: 'ArrayNum',
-          comment: undefined
-        }),  
+          comment: undefined,
+        }),
       ])
     )
   })
