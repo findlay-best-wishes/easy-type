@@ -4,7 +4,7 @@
   "description": "A tool that could gain information of some type from exist declaration file.",
   "main": "dist/src/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && tsc --declaration",
     "build:rollup": "rollup -c rollup.config.ts",
     "start": "NODE_OPTION='--experimental-vm-module' ts-node-esm main1.ts"
   },
