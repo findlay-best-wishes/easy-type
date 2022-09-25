@@ -2,11 +2,13 @@
 
 Gain information ( such as type or comment ) of some type from typescript project.
 
-# Usage
+# Install
 
 ```shell
 npm install easy-type
 ```
+
+# Usage
 
 ```javascript
 const { getTypeOption } = require('easy-type')
