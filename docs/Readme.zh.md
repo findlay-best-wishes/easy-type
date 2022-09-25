@@ -2,11 +2,13 @@
 
 获取 typescript 工程中某个类型的信息，比如类型的字符表示及对应的 jsdoc comment。
 
-# 用法
+# 安装
 
-```shell
+``` shell
 npm install easy-type
 ```
+
+# 用法
 
 ```javascript
 const { getTypeOption } = require('easy-type')
@@ -17,8 +19,6 @@ const { name, type, comment } = getTypeOption({
   tsconfig: 'tsconfig'
 })
 ```
-
-a
 
 ```javascript
 // 获取多个类型信息
