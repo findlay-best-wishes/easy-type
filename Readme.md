@@ -5,13 +5,13 @@ Gain information ( such as type or comment ) of some type from typescript projec
 # Install
 
 ```shell
-npm install easy-type
+npm install @findlay-best-wishes/easy-type
 ```
 
 # Usage
 
 ```javascript
-const { getTypeOption } = require('easy-type')
+const { getTypeOption } = require('@findlay-best-wishes/easy-type')
 
 const { name, type, comment } = getTypeOption({
   entryFile: 'test.ts',
@@ -22,7 +22,7 @@ const { name, type, comment } = getTypeOption({
 
 ```javascript
 // gain mutiple type information
-const { getTypeOption } = require('easy-type')
+const { getTypeOption } = require('@findlay-best-wishes/easy-type')
 
 const { Props, State } = getTypeOption({
   entryFile: 'button.ts',

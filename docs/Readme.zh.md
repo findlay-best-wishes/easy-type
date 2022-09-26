@@ -5,13 +5,13 @@
 # 安装
 
 ``` shell
-npm install easy-type
+npm install @findlay-best-wishes/easy-type
 ```
 
 # 用法
 
 ```javascript
-const { getTypeOption } = require('easy-type')
+const { getTypeOption } = require('@findlay-best-wishes/easy-type')
 
 const { name, type, comment } = getTypeOption({
   entryFile: 'test.ts',
@@ -22,7 +22,7 @@ const { name, type, comment } = getTypeOption({
 
 ```javascript
 // 获取多个类型信息
-const { getTypeOption } = require('easy-type')
+const { getTypeOption } = require('@findlay-best-wishes/easy-type')
 
 const { Props, State } = getTypeOption({
   entryFile: 'button.ts',

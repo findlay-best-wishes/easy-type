@@ -1,5 +1,5 @@
 {
-  "name": "easy-type",
+  "name": "@findlay-best-wishes/easy-type",
   "version": "0.0.0-development",
   "description": "gain information of some type from typescript project",
   "main": "dist/index.js",
@@ -29,6 +29,9 @@
         "prerelease": true
       }
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "author": "findlay-best-wishes",
   "repository": "https://github.com/findlay-best-wishes/easy-type",
