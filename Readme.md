@@ -13,11 +13,13 @@ npm install @findlay-best-wishes/easy-type
 ```javascript
 const { getTypeOption } = require('@findlay-best-wishes/easy-type')
 
-const { name, type, comment } = getTypeOption({
+const { Props } = getTypeOption({
   entryFile: 'test.ts',
   typeName: 'Props'
   tsconfig: 'tsconfig'
 })
+
+const { name, type, comment } = Props
 ```
 
 ```javascript
