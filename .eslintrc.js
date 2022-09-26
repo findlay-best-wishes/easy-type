@@ -22,11 +22,10 @@ module.exports = {
 	'rules': {
 		'indent': [
 			'warn',
-			'tab'
+			'2'
 		],
 		'linebreak-style': [
-			'error',
-			'unix'
+			'off'
 		],
 		'quotes': [
 			'error',
@@ -35,6 +34,9 @@ module.exports = {
 		'semi': [
 			'error',
 			'never'
-		]
+		],
+		"@typescript-eslint/no-var-requires": [
+      'off'
+    ]
 	}
 }
